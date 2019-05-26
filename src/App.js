@@ -13,6 +13,7 @@ class App extends Component {
     this.handleDeleteOptions = this.handleDeleteOptions.bind(this);
     this.handlePick = this.handlePick.bind(this);
     this.handleAddOptionP = this.handleAddOptionP.bind(this);
+    this.handleDeleteOption = this.handleDeleteOption.bind(this);
 
     this.state = {
       //options: ['o1', 'o2', 'o3']
@@ -31,6 +32,15 @@ class App extends Component {
   //Implicitly returning an object(fancy syntax)
   handleDeleteOptions() {
     this.setState(() => ({ options: [] }));
+  }
+
+  handleDeleteOption(optionToDelete) {
+    // console.log('hdo', option);
+    this.setState(prevState => ({
+      options: prevState.options.filter(option => {
+        return optionToDelete !== option;
+      })
+    }));
   }
 
   handlePick() {
@@ -76,6 +86,7 @@ class App extends Component {
         <Options
           options={this.state.options}
           handleDeleteOptions={this.handleDeleteOptions}
+          handleDeleteOption={this.handleDeleteOption}
         />
         <AddOption handleAddOptionP={this.handleAddOptionP} />
       </div>
