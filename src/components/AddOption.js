@@ -8,20 +8,18 @@ export class AddOption extends Component {
       error: undefined
     };
   }
+
   handleAddOption(e) {
     e.preventDefault();
 
     const option = e.target.elements.option.value.trim();
-
     const error = this.props.handleAddOptionP(option);
-    this.setState(() => {
+    this.setState(() => ({
       //console.log(error);
-      return {
-        // error: error
-        // if we have the property with the same name, we can modify the code as below
-        error
-      };
-    });
+      // error: error
+      // if we have the property with the same name, we can modify the code as below
+      error
+    }));
   }
   render() {
     return (

@@ -20,12 +20,17 @@ class App extends Component {
     };
   }
 
-  handleDeleteOptions() {
+  /** handleDeleteOptions() {
     this.setState(() => {
       return {
         options: []
       };
     });
+  } */
+
+  //Implicitly returning an object(fancy syntax)
+  handleDeleteOptions() {
+    this.setState(() => ({ options: [] }));
   }
 
   handlePick() {
@@ -42,12 +47,18 @@ class App extends Component {
     }
 
     console.log(option);
-    this.setState(prevState => {
+
+    /** this.setState(prevState => {
       return {
-        // options: prevState.options.concat([option])
         options: prevState.options.concat(option)
       };
-    });
+    });*/
+
+    //Implicitly returning an object(fancy syntax)
+    this.setState(prevState => ({
+      // options: prevState.options.concat([option])
+      options: prevState.options.concat(option)
+    }));
   }
 
   render() {
