@@ -12,8 +12,10 @@ export class AddOption extends Component {
     e.preventDefault();
 
     const option = e.target.elements.option.value.trim();
+
     const error = this.props.handleAddOptionP(option);
     this.setState(() => {
+      //console.log(error);
       return {
         // error: error
         // if we have the property with the same name, we can modify the code as below

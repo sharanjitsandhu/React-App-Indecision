@@ -36,7 +36,7 @@ class App extends Component {
 
   handleAddOptionP(option) {
     if (!option) {
-      return 'Enter valid value to add option!';
+      return 'Please enter a valid value to add option!';
     } else if (this.state.options.indexOf(option) > -1) {
       return 'This option already exists!';
     }
@@ -52,12 +52,11 @@ class App extends Component {
 
   render() {
     const title = 'Indecision React App';
-    const subtitle = 'Put your life in the hands of a computer!';
     // const options = ['o1', 'o2', 'o3'];
 
     return (
       <div className="App">
-        <Header title={title} subtitle={subtitle} />
+        <Header title={title} />
         <Action
           hasOptions={this.state.options.length > 0}
           handlePick={this.handlePick}
