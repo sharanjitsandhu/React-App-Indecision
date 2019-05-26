@@ -51,12 +51,13 @@ class App extends Component {
   }
 
   render() {
-    const title = 'Indecision React App';
+    // const title = 'Indecision App';
     // const options = ['o1', 'o2', 'o3'];
 
     return (
       <div className="App">
-        <Header title={title} />
+        {/* <Header title={title} /> */}
+        <Header />
         <Action
           hasOptions={this.state.options.length > 0}
           handlePick={this.handlePick}
