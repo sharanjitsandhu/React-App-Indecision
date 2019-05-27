@@ -10,7 +10,7 @@ const Option = props => {
           props.handleDeleteOption(props.optionText);
         }}
       >
-        x
+        Delete
       </button>
     </div>
   );

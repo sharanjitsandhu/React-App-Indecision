@@ -3,13 +3,15 @@ import Action from './components/Action';
 import Options from './components/Options';
 import AddOption from './components/AddOption';
 import Header from './components/Header';
+import OptionModal from './components/OptionModal';
 
 import './App.css';
 
 class App extends Component {
   state = {
     //options: ['o1', 'o2', 'o3']
-    options: ['o1', 'o2', 'o3']
+    options: ['o1', 'o2', 'o3'],
+    selectedOption: undefined
   };
 
   // fetching data
@@ -49,7 +51,7 @@ class App extends Component {
       };
     });
   } */
-  // Converted all the event handlers to arrow function(class properties)
+  // Converted all the event handlers to arrow functions(class properties)
   // Implicitly returning an object(fancy syntax)
   handleDeleteOptions = () => {
     this.setState(() => ({ options: [] }));
@@ -67,7 +69,17 @@ class App extends Component {
   handlePick = () => {
     const randomNum = Math.floor(Math.random() * this.state.options.length);
     const option = this.state.options[randomNum];
-    alert(option);
+    // alert(option);
+    // using setState to set selectedOption
+    this.setState(() => ({
+      selectedOption: option
+    }));
+  };
+
+  handleClearSelectedOption = () => {
+    this.setState(() => ({
+      selectedOption: undefined
+    }));
   };
 
   handleAddOptionP = option => {
@@ -110,6 +122,10 @@ class App extends Component {
           handleDeleteOption={this.handleDeleteOption}
         />
         <AddOption handleAddOptionP={this.handleAddOptionP} />
+        <OptionModal
+          selectedOption={this.state.selectedOption}
+          handleClearSelectedOption={this.handleClearSelectedOption}
+        />
       </div>
     );
   }

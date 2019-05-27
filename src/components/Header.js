@@ -11,7 +11,7 @@ const Header = props => {
 // We can define default values for props by assigning to the special 'defaultProps' property
 // Specifies the default values for props
 Header.defaultProps = {
-  title: 'Indecision React App'
+  title: 'Indecision'
 };
 
 export default Header;
