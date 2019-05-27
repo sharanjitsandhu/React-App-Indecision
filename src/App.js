@@ -7,19 +7,11 @@ import Header from './components/Header';
 import './App.css';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    // binding with current component instances
-    this.handleDeleteOptions = this.handleDeleteOptions.bind(this);
-    this.handlePick = this.handlePick.bind(this);
-    this.handleAddOptionP = this.handleAddOptionP.bind(this);
-    this.handleDeleteOption = this.handleDeleteOption.bind(this);
+  state = {
+    //options: ['o1', 'o2', 'o3']
+    options: ['o1', 'o2', 'o3']
+  };
 
-    this.state = {
-      //options: ['o1', 'o2', 'o3']
-      options: ['o1', 'o2', 'o3']
-    };
-  }
   // fetching data
   componentDidMount() {
     // console.log('cdm');
@@ -57,28 +49,28 @@ class App extends Component {
       };
     });
   } */
-
-  //Implicitly returning an object(fancy syntax)
-  handleDeleteOptions() {
+  // Converted all the event handlers to arrow function(class properties)
+  // Implicitly returning an object(fancy syntax)
+  handleDeleteOptions = () => {
     this.setState(() => ({ options: [] }));
-  }
+  };
 
-  handleDeleteOption(optionToDelete) {
-    //console.log('hdo', optionToDelete);
+  handleDeleteOption = optionToDelete => {
+    // console.log('hdo', optionToDelete);
     this.setState(prevState => ({
       options: prevState.options.filter(option => {
         return optionToDelete !== option;
       })
     }));
-  }
+  };
 
-  handlePick() {
+  handlePick = () => {
     const randomNum = Math.floor(Math.random() * this.state.options.length);
     const option = this.state.options[randomNum];
     alert(option);
-  }
+  };
 
-  handleAddOptionP(option) {
+  handleAddOptionP = option => {
     if (!option) {
       return 'Please enter a valid value to add option!';
     } else if (this.state.options.indexOf(option) > -1) {
@@ -98,7 +90,7 @@ class App extends Component {
       // options: prevState.options.concat([option])
       options: prevState.options.concat(option)
     }));
-  }
+  };
 
   render() {
     // const title = 'Indecision App';

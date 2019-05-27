@@ -1,15 +1,11 @@
 import React, { Component } from 'react';
 
 export class AddOption extends Component {
-  constructor(props) {
-    super(props);
-    this.handleAddOption = this.handleAddOption.bind(this);
-    this.state = {
-      error: undefined
-    };
-  }
+  state = {
+    error: undefined
+  };
 
-  handleAddOption(e) {
+  handleAddOption = e => {
     e.preventDefault();
 
     const option = e.target.elements.option.value.trim();
@@ -24,7 +20,7 @@ export class AddOption extends Component {
       // After submitting the right data, the input gets wiped
       e.target.elements.option.value = '';
     }
-  }
+  };
   render() {
     return (
       <div>
