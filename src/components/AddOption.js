@@ -20,6 +20,10 @@ export class AddOption extends Component {
       // if we have the property with the same name, we can modify the code as below
       error
     }));
+    if (!error) {
+      // After submitting the right data, the input gets wiped
+      e.target.elements.option.value = '';
+    }
   }
   render() {
     return (

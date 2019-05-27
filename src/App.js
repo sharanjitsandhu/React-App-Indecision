@@ -31,7 +31,9 @@ class App extends Component {
           options: options
         }));
       }
-    } catch (e) {}
+    } catch (e) {
+      // Do nothing at all
+    }
   }
 
   // saving data
