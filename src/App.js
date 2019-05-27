@@ -20,6 +20,33 @@ class App extends Component {
       options: ['o1', 'o2', 'o3']
     };
   }
+  // fetching data
+  componentDidMount() {
+    // console.log('cdm');
+    try {
+      const json = localStorage.getItem('options');
+      const options = JSON.parse(json);
+      if (options) {
+        this.setState(() => ({
+          options: options
+        }));
+      }
+    } catch (e) {}
+  }
+
+  // saving data
+  // run: localStorage.getItem('options')
+  componentDidUpdate(prevProps, prevState) {
+    // console.log('cdu');
+    if (prevState.options.length !== this.state.options.length) {
+      const json = JSON.stringify(this.state.options);
+      localStorage.setItem('options', json);
+    }
+  }
+
+  componentWillUnmount() {
+    console.log('cwm');
+  }
 
   /** handleDeleteOptions() {
     this.setState(() => {
@@ -35,7 +62,7 @@ class App extends Component {
   }
 
   handleDeleteOption(optionToDelete) {
-    // console.log('hdo', option);
+    //console.log('hdo', optionToDelete);
     this.setState(prevState => ({
       options: prevState.options.filter(option => {
         return optionToDelete !== option;
