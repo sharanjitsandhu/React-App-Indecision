@@ -1,0 +1,25 @@
+.widget {
+  background: $pink-lavender;
+  margin-bottom: $xl-size;
+}
+
+.widget-header {
+  background: $pink;
+  color: $imperial;
+  display: flex;
+  padding: $m-size;
+  justify-content: space-between;
+}
+
+.widget-header-title {
+  font-weight: 600;
+  margin: 0;
+}
+
+.widget-message {
+  color: $imperial;
+  margin: 0;
+  padding: $xl-size;
+  text-align: center;
+  border-bottom: 1px solid $gray;
+}

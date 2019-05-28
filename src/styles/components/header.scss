@@ -1,0 +1,14 @@
+.header {
+  background: $imperial;
+  margin-bottom: xl-size;
+  padding: $m-size;
+  color: $platinum;
+}
+
+// BEM block element modifier
+.header-title {
+  color: $platinum;
+  font-size: $l-size;
+  margin: 0;
+  font-weight: 800;
+}

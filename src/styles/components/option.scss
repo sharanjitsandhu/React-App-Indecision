@@ -1,0 +1,12 @@
+.option {
+  display: flex;
+  justify-content: space-between;
+  padding: $s-size $m-size;
+  border-bottom: 1px solid gray;
+}
+.option-text {
+  color: $imperial;
+  font-weight: 500;
+  font-size: $m-size;
+  margin: 0;
+}

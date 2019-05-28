@@ -1,0 +1,44 @@
+.big-button {
+  background: $bubbles;
+  color: $imperial;
+  border: none;
+  font-weight: 600;
+  font-size: $l-size;
+  outline: none;
+  width: 100%;
+  margin-top: $m-size;
+  margin-bottom: $m-size;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  border-radius: $s-size;
+  box-shadow: 0 5px $gray;
+}
+
+.big-button:disabled {
+  opacity: 0.5;
+}
+
+.button {
+  background: $imperial;
+  color: $bubbles;
+  border: none;
+  font-weight: 600;
+  font-size: $m-size;
+  outline: none;
+  padding: $s-size;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 5px $gray;
+}
+
+.button-delete {
+  background: none;
+  border: none;
+  color: $imperial;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+}

@@ -1,0 +1,22 @@
+.add-option-error {
+  color: $imperial;
+  font-style: oblique;
+  font-size: $m-size;
+  margin: $s-size 0 0 0;
+  padding: $s-size;
+}
+
+.add-option {
+  display: flex;
+  justify-content: space-around;
+  padding: $s-size;
+}
+
+.add-option-input {
+  flex-grow: 1;
+  background: $bubbles;
+  margin-right: $s-size;
+  color: $imperial;
+  outline: none;
+  box-shadow: 0 5px $gray;
+}
