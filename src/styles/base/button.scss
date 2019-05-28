@@ -15,6 +15,12 @@
   box-shadow: 0 5px $gray;
 }
 
+@media (min-width: $desktop-breakpoint) {
+  .big-button {
+    margin-bottom: $xl-size;
+  }
+}
+
 .big-button:disabled {
   opacity: 0.5;
 }
