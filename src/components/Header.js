@@ -8,7 +8,7 @@ const Header = props => {
       <div className="container">
         {/* <h2 className="header-title">{props.title}</h2> */}
         <img
-          className="header-title"
+          className="logo"
           src={logo}
           alt="Logo"
           height="70px"

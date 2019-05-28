@@ -10,7 +10,7 @@ import 'normalize.css';
 class App extends Component {
   state = {
     //options: ['o1', 'o2', 'o3']
-    options: ['o1', 'o2', 'o3'],
+    options: ['option1', 'option2', 'option3'],
     selectedOption: undefined
   };
 
