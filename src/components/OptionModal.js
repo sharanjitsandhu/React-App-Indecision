@@ -10,7 +10,7 @@ const OptionModal = props => (
   // using areaHideApp to remove this Warning: react-modal: App element is not defined. Please use `Modal.setAppElement(el)` or set `appElement={el}`. This is needed so screen readers don't see main content when modal is opened. It is not recommended, but you can opt-out by setting `ariaHideApp={false}`.
   <Modal
     className="modal"
-    closeTimeoutMS={200}
+    closeTimeoutMS={300}
     isOpen={!!props.selectedOption}
     contentLabel="Selected Option"
     onRequestClose={props.handleClearSelectedOption}
